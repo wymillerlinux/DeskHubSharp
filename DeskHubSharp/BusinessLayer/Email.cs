@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Net;
-using System.Net.Mail;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using MailKit;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using MimeKit;
 
 namespace DeskHubSharp
 {
     class Email
     {
         // TODO: finish this class
+        // TODO: debug feedback form
 
-        private string _to = "wyatt@wyattjmiller.com";
+        private string _to = "wjmiller2016@gmail.com";
         private string _from = "wjmiller2016@gmail.com";
         private string _name;
         private string _message;
@@ -50,25 +53,33 @@ namespace DeskHubSharp
         {
             if (IsValidated())
             {
-                // TODO: get a test email to send
-                string subject = $"DeskHubSharp: {_name} requires your attention.";
-                string body = $"{_message}";
-                MailMessage message = new MailMessage(_from, _to, subject, body);
-                SmtpClient client = new SmtpClient("smtp.gmail.com");
-                //Console.WriteLine("Changing time out from {0} to 100.", client.Timeout);
-                client.Timeout = 1000;
-                // Credentials are necessary if the server requires the client 
-                // to authenticate before it will send e-mail on the client's behalf.
-                client.Credentials = CredentialCache.DefaultNetworkCredentials;
-
                 try
                 {
-                    client.Send(message);
+                    var err = new ErrorWindow();
+                    var message = new MimeMessage();
+                    message.From.Add(new MailboxAddress($"{_name}", _from));
+                    message.To.Add(new MailboxAddress("Wyatt J. Miller", _to));
+                    message.Subject = $"{_name} requires your attention!";
+                    message.Body = new TextPart("plain")
+                    {
+                        Text = _message
+                    };
+
+                    using (var client = new SmtpClient())
+                    {
+                        client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
+                        client.Authenticate(_from, "IhaveanAMDRX580");
+                        client.Send(message);
+                        client.Disconnect(true);
+                    }
+                    err.lbl_title.Content = "Thank you!";
+                    err.txtblk_error.Text = "Thank you for sending your email! We have it and will reply shortly.";
+                    err.ShowDialog();
                 }
                 catch (Exception e)
                 {
                     ErrorWindow err = new ErrorWindow();
-                    Console.WriteLine("Exception caught in CreateTimeoutTestMessage(): {0}",
+                    Console.WriteLine("Exception caught in sending message: {0}",
                             e.ToString());
                     err.ShowDialog();
                 }
