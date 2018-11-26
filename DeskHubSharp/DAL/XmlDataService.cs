@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace CIT225FinalAppication
+namespace DeskHubSharp
 {
     class XmlDataService
     {

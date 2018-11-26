@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DeskHubSharp
 {
-    public interface IDataService
+    class DataConfig
     {
-        List<Search> ReadAll();
-        void WriteAll(List<Search> user);
+        public string dataConfString = "";
     }
 }

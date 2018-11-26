@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="DeskHubSharp" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="90,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="170,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="250,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_search" Content="Search" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFA1C8FF" Click="btn_search_Click"/>
+        <Button x:Name="btn_detail" Content="Detail" HorizontalAlignment="Left" Margin="90,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFA1C8FF" Click="btn_detail_Click"/>
+        <Button x:Name="btn_feedback" Content="Feedback" HorizontalAlignment="Left" Margin="170,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFD9A1FF" Click="btn_feedback_Click"/>
+        <Button x:Name="btn_help" Content="Help" HorizontalAlignment="Left" Margin="250,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFFF9D" Click="btn_help_Click"/>
+        <Button x:Name="btn_about" Content="About" HorizontalAlignment="Left" Margin="627,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFAFFBAB" Click="btn_about_Click"/>
         <DataGrid HorizontalAlignment="Left" Height="333" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFF9999" Click="btn_exit_Click"/>
 
     </Grid>
 </Window>

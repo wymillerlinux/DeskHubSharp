@@ -147,6 +147,6 @@ namespace DeskHubSharp
         /// <summary>
         /// 
         /// </summary>
-        public List <ItemsItem> items { get; set; }
+        public List<ItemsItem> items { get; set; }
     }
 }

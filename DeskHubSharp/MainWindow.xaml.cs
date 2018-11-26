@@ -24,5 +24,40 @@ namespace DeskHubSharp
         {
             InitializeComponent();
         }
+
+        private void btn_detail_Click(object sender, RoutedEventArgs e)
+        {
+            DetailWindow detail = new DetailWindow();
+            detail.ShowDialog();
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_about_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow about = new AboutWindow();
+            about.ShowDialog();
+        }
+
+        private void btn_feedback_Click(object sender, RoutedEventArgs e)
+        {
+            FeedbackWindow feedback = new FeedbackWindow();
+            feedback.ShowDialog();
+        }
+
+        private void btn_help_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow help = new HelpWindow();
+            help.ShowDialog();
+        }
+
+        private void btn_search_Click(object sender, RoutedEventArgs e)
+        {
+            SearchWindow search = new SearchWindow();
+            search.ShowDialog();
+        }
     }
 }

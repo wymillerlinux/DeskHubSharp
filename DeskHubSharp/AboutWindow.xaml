@@ -1,0 +1,15 @@
+﻿<Window x:Class="DeskHubSharp.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeskHubSharp"
+        mc:Ignorable="d"
+        Title="AboutWindow" Height="450" Width="400">
+    <Grid>
+        <Label x:Name="lbl_title" Content="DeskHubSharp" HorizontalAlignment="Left" Margin="2,10,10,0" VerticalAlignment="Top" FontSize="24" Width="372"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="307,389,0,0" VerticalAlignment="Top" Width="75" Click="btn_close_Click" Background="#FFFFBABA"/>
+        <TextBlock x:Name="txtblk_about1" HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="372"><Run Text="Written by Wyatt J. Miller"/><LineBreak/><Run Text="Copyright 2018, All rights reserved"/><LineBreak/><Run Text="Licensed under the MIT license"/></TextBlock>
+        <TextBlock x:Name="txtblk_about2" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="87" Width="372"><Run Text="Using technologies Visual Studio, .NET, WPF and Avalonia."/><LineBreak/><Run Text="Want to help with development?"/></TextBlock>
+    </Grid>
+</Window>

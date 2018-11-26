@@ -1,0 +1,16 @@
+﻿<Window x:Class="DeskHubSharp.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeskHubSharp"
+        mc:Ignorable="d"
+        Title="HelpWindow" Height="450" Width="400
+">
+    <Grid>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="307,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFBDBD" Click="btn_close_Click"/>
+        <Label x:Name="lbl_title" Content="Need some help?" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="332" Width="372"><Run Text="No worries friend! We have you covered!"/><LineBreak/><Run/><LineBreak/><Run Text="If you have a blank data grid when you first start the program, that's normal! You just have to search for somebody."/><LineBreak/><Run/><LineBreak/><Run Text="Click on the Search button and type away in the name field! If you get an error in response to your search query, that means that user doesn't exist."/><LineBreak/><Run/><LineBreak/><Run Text="If the search finds a user, the data grid will populate. Click on a repository of interest and click on the Detail button to view it in action."/><LineBreak/><Run/><LineBreak/><Run Text="You found a problem with the program? Great! Click on the Feedback button to send an email to me and I will respond to said email as soon as possible."/><LineBreak/><LineBreak/><Run Text="Want to know more about this program? Click on the About program to view stuff."/></TextBlock>
+
+    </Grid>
+</Window>
