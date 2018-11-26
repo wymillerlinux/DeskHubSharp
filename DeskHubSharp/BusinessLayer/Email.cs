@@ -68,7 +68,7 @@ namespace DeskHubSharp
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
-                        client.Authenticate(_from, "IhaveanAMDRX580");
+                        client.Authenticate(_from, "password");
                         client.Send(message);
                         client.Disconnect(true);
                     }
