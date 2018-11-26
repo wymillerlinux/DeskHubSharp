@@ -68,6 +68,7 @@ namespace DeskHubSharp
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
+                        // change credentials
                         client.Authenticate(_from, "password");
                         client.Send(message);
                         client.Disconnect(true);
