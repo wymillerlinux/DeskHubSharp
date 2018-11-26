@@ -31,7 +31,7 @@ namespace DeskHubSharp
 
         private void btn_send_Click(object sender, RoutedEventArgs e)
         {
-            Email email = new Email(txtbox_name, txtbox_feedbackmessage);
+            EmailBLL email = new EmailBLL(txtbox_name, txtbox_feedbackmessage);
             email.CreateMessage();
         }
     }

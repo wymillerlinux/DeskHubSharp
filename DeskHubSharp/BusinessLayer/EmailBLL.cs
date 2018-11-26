@@ -11,7 +11,7 @@ using MimeKit;
 
 namespace DeskHubSharp
 {
-    class Email
+    class EmailBLL
     {
         // TODO: finish this class
         // TODO: debug feedback form
@@ -21,7 +21,7 @@ namespace DeskHubSharp
         private string _name;
         private string _message;
 
-        public Email(TextBox name, TextBox emailBody)
+        public EmailBLL(TextBox name, TextBox emailBody)
         {
             _name = name.Text;
             _message = emailBody.Text;

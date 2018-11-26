@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Compile Include="DAL\JsonDataService.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
     </Compile>
@@ -101,7 +102,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BusinessLayer\Email.cs" />
+    <Compile Include="BusinessLayer\EmailBLL.cs" />
     <Compile Include="BusinessLayer\Request.cs" />
     <Compile Include="DAL\IDataService.cs" />
     <Compile Include="DAL\XmlDataService.cs" />
