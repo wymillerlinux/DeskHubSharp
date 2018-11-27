@@ -8,7 +8,7 @@
         Title="Feedback - DeskHubSharp" Height="450" Width="500">
     <Grid>
         <Label x:Name="lbl_title" Content="Feedback" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="23" Margin="43,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+        <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="23" Margin="43,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtbox_feedbackmessage" HorizontalAlignment="Left" Height="117" Margin="43,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406"/>
         <TextBlock HorizontalAlignment="Left" Margin="43,52,0,0" TextWrapping="Wrap" Text="Is there a problem with the program? Got a new feature that you want in the program? By filling out this feedback form, you can shape development going forward! Please state your case and we will reply as soon as possible." VerticalAlignment="Top" Height="76" Width="388"/>
         <Label x:Name="lbl_nametxt" Content="Name:" HorizontalAlignment="Left" Margin="43,133,0,0" VerticalAlignment="Top" Padding="2,5,5,5"/>
@@ -19,6 +19,8 @@
                 <Color x:Key="Green">#FF34A853</Color>
             </Button.Resources>
         </Button>
+        <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" Height="23" Margin="200,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+        <Label x:Name="lbl_emailtxt" Content="Email:" HorizontalAlignment="Left" Margin="200,133,0,0" VerticalAlignment="Top" Padding="3,5,5,5"/>
 
     </Grid>
 </Window>

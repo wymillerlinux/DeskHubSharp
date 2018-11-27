@@ -16,15 +16,15 @@ namespace DeskHubSharp
         // TODO: finish this class
         // TODO: debug feedback form
 
-        private string _to = "wjmiller2016@gmail.com";
-        private string _from = "wjmiller2016@gmail.com";
         private string _name;
         private string _message;
+        private string _emailText;
 
-        public EmailBLL(TextBox name, TextBox emailBody)
+        public EmailBLL(string name, string message, string emailText)
         {
-            _name = name.Text;
-            _message = emailBody.Text;
+            _name = name;
+            _message = message;
+            _emailText = emailText;
         }
 
         private bool IsValidated()
@@ -55,24 +55,27 @@ namespace DeskHubSharp
             {
                 try
                 {
+                    var email = new Email();
                     var err = new ErrorWindow();
                     var message = new MimeMessage();
-                    message.From.Add(new MailboxAddress($"{_name}", _from));
-                    message.To.Add(new MailboxAddress("Wyatt J. Miller", _to));
+
+                    message.From.Add(new MailboxAddress($"{_name}", email.FromEmail));
+                    message.To.Add(new MailboxAddress("Wyatt J. Miller", email.ToEmail));
                     message.Subject = $"{_name} requires your attention!";
                     message.Body = new TextPart("plain")
                     {
-                        Text = _message
+                        Text = _message + _emailText
                     };
 
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
                         // change credentials
-                        client.Authenticate(_from, "password");
+                        client.Authenticate(email.FromEmail, email.Password);
                         client.Send(message);
                         client.Disconnect(true);
                     }
+
                     err.lbl_title.Content = "Thank you!";
                     err.txtblk_error.Text = "Thank you for sending your email! We have it and will reply shortly.";
                     err.ShowDialog();

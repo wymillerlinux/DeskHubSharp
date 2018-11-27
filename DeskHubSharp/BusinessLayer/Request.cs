@@ -10,7 +10,7 @@ namespace DeskHubSharp
 {
     class Request
     {
-        private string _apiEndpoint = "https://api.github.com/v3/";
+        private string _apiEndpoint = "https://api.github.com/";
 
         public Request()
         {

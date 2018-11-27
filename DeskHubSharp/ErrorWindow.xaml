@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="ErrorWindow" Height="200" Width="300
+        Title="Response - DeskHubSharp" Height="200" Width="300
         ">
     <Grid>
         <TextBlock x:Name="txtblk_error" HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="An error occurred. Please try again." VerticalAlignment="Top" Width="272" TextAlignment="Center" RenderTransformOrigin="0.468,-0.751"/>
