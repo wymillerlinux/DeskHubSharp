@@ -10,7 +10,7 @@
         <Label x:Name="lbl_search" Content="Search" HorizontalAlignment="Left" Margin="17,15,0,0" VerticalAlignment="Top" FontSize="20" Padding="2,5,5,5"/>
         <TextBox x:Name="txtbox_query" HorizontalAlignment="Left" Height="23" Margin="17,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465"/>
         <Label x:Name="lbl_user" Content="User:" HorizontalAlignment="Left" Margin="17,52,0,0" VerticalAlignment="Top" Padding="3,5,5,5" RenderTransformOrigin="0.686,0.474"/>
-        <Button x:Name="btn_search" Content="GO!" HorizontalAlignment="Left" Margin="327,139,0,0" VerticalAlignment="Top" Width="75" Background="#FFC4FF93"/>
+        <Button x:Name="btn_search" Content="GO!" HorizontalAlignment="Left" Margin="327,139,0,0" VerticalAlignment="Top" Width="75" Background="#FFC4FF93" Click="btn_search_Click"/>
         <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="407,139,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFA1A1" Click="btn_close_Click"/>
 
     </Grid>

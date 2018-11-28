@@ -28,5 +28,11 @@ namespace DeskHubSharp
         {
             this.Close();
         }
+
+        private void btn_search_Click(object sender, RoutedEventArgs e)
+        {
+            Request request = new Request(txtbox_query.Text);
+            request.SearchRequest();
+        }
     }
 }

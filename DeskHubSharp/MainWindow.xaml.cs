@@ -23,6 +23,8 @@ namespace DeskHubSharp
         public MainWindow()
         {
             InitializeComponent();
+
+
         }
 
         private void btn_detail_Click(object sender, RoutedEventArgs e)
