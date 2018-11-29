@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace DeskHubSharp
 {
@@ -20,11 +21,12 @@ namespace DeskHubSharp
     /// </summary>
     public partial class MainWindow : Window
     {
+        SearchWindow search = new SearchWindow();
+
         public MainWindow()
         {
             InitializeComponent();
-
-
+            ShowDataGridItems();
         }
 
         private void btn_detail_Click(object sender, RoutedEventArgs e)
@@ -58,8 +60,23 @@ namespace DeskHubSharp
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
-            SearchWindow search = new SearchWindow();
             search.ShowDialog();
+            ObservableCollection<RepoDetail> test = RepoList.repoDetail;
+            DataGrid.ItemsSource = test;
+
+            RepoDetail rp = new RepoDetail();
+            rp.Owner.avatar_url
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        public void ShowDataGridItems()
+        {
+            DataGrid.ItemsSource = RepoList.repoDetail;
+        }
+
     }
 }

@@ -46,6 +46,16 @@ namespace DeskHubSharp
             var x = response.Content;
             var deserialized = JsonConvert.DeserializeObject<ObservableCollection<RepoDetail>>(x);
 
+            //ObservableCollection<RepoDetail> test = new ObservableCollection<RepoDetail>()
+            //{
+            //    new RepoDetail()
+            //    {
+            //        Login = "John",
+            //        Password = "pw"
+            //    }
+            //};
+
+
             RepoList.repoDetail = deserialized;
         }
 

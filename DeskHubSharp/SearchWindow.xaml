@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="SearchWindow" Height="200" Width="500">
+        Title="Search - DeskHubSharp" Height="200" Width="500">
     <Grid>
         <Label x:Name="lbl_search" Content="Search" HorizontalAlignment="Left" Margin="17,15,0,0" VerticalAlignment="Top" FontSize="20" Padding="2,5,5,5"/>
         <TextBox x:Name="txtbox_query" HorizontalAlignment="Left" Height="23" Margin="17,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465"/>
