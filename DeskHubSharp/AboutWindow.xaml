@@ -10,6 +10,12 @@
         <Label x:Name="lbl_title" Content="DeskHubSharp" HorizontalAlignment="Left" Margin="2,10,10,0" VerticalAlignment="Top" FontSize="24" Width="372"/>
         <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="307,389,0,0" VerticalAlignment="Top" Width="75" Click="btn_close_Click" Background="#FFFFBABA"/>
         <TextBlock x:Name="txtblk_about1" HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="372"><Run Text="Written and developed by Wyatt J. Miller"/><LineBreak/><Run Text="Copyright 2018, All rights reserved"/><LineBreak/><Run Text="Licensed under the MIT license"/></TextBlock>
-        <TextBlock x:Name="txtblk_about2" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="117" Width="372"><Run Text="Using technologies including but not limited to Visual Studio, .NET, Newtonsoft, RestSharp, MailKit/Mimekit and WPF."/><LineBreak/><Run/><LineBreak/><Run Text="Want to help with development? "/><LineBreak/><Run Text="https://github.com/wymillerlinux/DeskHubSharp"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="txtblk_about2" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="372"><Run Text="Using technologies including but not limited to Visual Studio, .NET, Newtonsoft, RestSharp, MailKit/Mimekit and WPF."/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="372">
+            <!--The following came from the link: https://stackoverflow.com/questions/10238694/example-using-hyperlink-in-wpf-->
+            <Hyperlink  NavigateUri="http://github.com/wymillerlinux/DeskhubSharp" RequestNavigate="Hyperlink_RequestNavigate" >
+                Want to help with development?
+            </Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>

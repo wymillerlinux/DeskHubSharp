@@ -60,7 +60,7 @@ namespace DeskHubSharp
 
 
         /// <summary>
-        /// Deprecated: Calls API for user data
+        /// Calls API for detailed user data
         /// </summary>
         public void UserRequest()
         {
@@ -69,8 +69,10 @@ namespace DeskHubSharp
             RestRequest requestUser = new RestRequest($"users/{_query}", Method.GET);
 
             var response = client.Execute(requestUser);
-            string x = response.ToString();
-            var deserialized = JsonConvert.DeserializeObject<User>(x);
+            string x = response.Content;
+            var deserailized = JsonConvert.DeserializeObject<User>(x);
+
+            RepoList.userDetail = deserailized;
         }
 
     }

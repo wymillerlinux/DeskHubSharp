@@ -9,7 +9,9 @@ namespace DeskHubSharp
 {
     class RepoList
     {
-        public static ObservableCollection<RepoDetail> _repoDetail;
+        private static ObservableCollection<RepoDetail> _repoDetail;
+
+        public static User userDetail { get; set; }
 
         public static ObservableCollection<RepoDetail> repoDetail
         {

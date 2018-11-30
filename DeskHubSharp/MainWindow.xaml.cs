@@ -21,6 +21,8 @@ namespace DeskHubSharp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<RepoDetail> _repoDetail;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +31,8 @@ namespace DeskHubSharp
 
         private void btn_detail_Click(object sender, RoutedEventArgs e)
         {
-            DetailWindow detail = new DetailWindow();
+            RepoDetail repo = _repoDetail[DataGrid.SelectedIndex];
+            DetailWindow detail = new DetailWindow(repo);
             detail.ShowDialog();
         }
 
@@ -59,11 +62,22 @@ namespace DeskHubSharp
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
             SearchWindow search = new SearchWindow();
-            RepoInfo info = new RepoInfo();
+            RepoDetail detail = new RepoDetail();
+            //RepoInfo info = new RepoInfo();
+            Owner owner = new Owner();
+            User user = new User();
             search.ShowDialog();
             //var stuff = info.GetRepoInfoDataGrid();
-            ObservableCollection<RepoDetail> test = RepoList.repoDetail;
-            DataGrid.ItemsSource = test;
+            _repoDetail = RepoList.repoDetail;
+            DataGrid.ItemsSource = _repoDetail;
+
+            txtblk_username.Text = RepoList.repoDetail[0].owner.login;
+            txtblk_url.Text = RepoList.repoDetail[0].owner.html_url;
+            txtblk_bio.Text = RepoList.userDetail.bio;
+            txtblk_email.Text = RepoList.userDetail.blog;
+            txtblk_realname.Text = RepoList.userDetail.name;
+            search.Close();
+            //img_avatar.Source = RepoList.repoDetail[0].owner.avatar_url;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

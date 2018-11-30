@@ -33,6 +33,7 @@ namespace DeskHubSharp
         {
             Request request = new Request(txtbox_query.Text);
             request.SearchRequest();
+            request.UserRequest();
             //MainWindow main = new MainWindow();
             //main.ShowDialog();
         }

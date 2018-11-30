@@ -5,17 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="DeskHubSharp" Height="450" Width="800">
+        Title="DeskHubSharp" Height="450" Width="805.114">
     <Grid>
         <Button x:Name="btn_search" Content="Search" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFA1C8FF" Click="btn_search_Click"/>
         <Button x:Name="btn_detail" Content="Detail" HorizontalAlignment="Left" Margin="90,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFA1C8FF" Click="btn_detail_Click"/>
         <Button x:Name="btn_feedback" Content="Feedback" HorizontalAlignment="Left" Margin="170,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFD9A1FF" Click="btn_feedback_Click"/>
         <Button x:Name="btn_help" Content="Help" HorizontalAlignment="Left" Margin="250,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFFF9D" Click="btn_help_Click"/>
         <Button x:Name="btn_about" Content="About" HorizontalAlignment="Left" Margin="627,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFAFFBAB" Click="btn_about_Click"/>
-        
-        <DataGrid Name="DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="333" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True"/>
+
+        <DataGrid Name="DataGrid" AutoGenerateColumns="True" Height="333" Margin="10,10,415,0" VerticalAlignment="Top" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True"/>
 
         <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFF9999" Click="btn_exit_Click"/>
+        <TextBlock x:Name="txtblk_username" Margin="387,50,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Height="35" FontSize="22" HorizontalAlignment="Left" Width="400"/>
+        <TextBlock x:Name="txtblk_url" HorizontalAlignment="Left" Margin="387,199,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Height="62" Width="217" FontSize="14"/>
+        <Image x:Name="img_avatar" HorizontalAlignment="Left" Height="176" Margin="609,90,0,0" VerticalAlignment="Top" Width="173"/>
+        <TextBlock x:Name="txtblk_bio" HorizontalAlignment="Left" Margin="387,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="109" Width="217" FontSize="14" Text="-"/>
+        <TextBlock x:Name="txtblk_email" HorizontalAlignment="Left" Margin="387,266,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Height="27" Width="217"/>
+        <TextBlock x:Name="txtblk_realname" HorizontalAlignment="Left" Margin="387,10,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Height="35
+                   " Width="400" FontSize="22"/>
 
     </Grid>
 </Window>
