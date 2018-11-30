@@ -76,7 +76,6 @@ namespace DeskHubSharp
             txtblk_bio.Text = RepoList.userDetail.bio;
             txtblk_email.Text = RepoList.userDetail.blog;
             txtblk_realname.Text = RepoList.userDetail.name;
-            search.Close();
             //img_avatar.Source = RepoList.repoDetail[0].owner.avatar_url;
         }
 

@@ -36,6 +36,7 @@ namespace DeskHubSharp
             request.UserRequest();
             //MainWindow main = new MainWindow();
             //main.ShowDialog();
+            this.Close();
         }
     }
 }
