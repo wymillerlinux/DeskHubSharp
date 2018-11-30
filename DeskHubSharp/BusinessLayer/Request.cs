@@ -55,9 +55,9 @@ namespace DeskHubSharp
             //    }
             //};
 
-
             RepoList.repoDetail = deserialized;
         }
+
 
         /// <summary>
         /// Deprecated: Calls API for user data

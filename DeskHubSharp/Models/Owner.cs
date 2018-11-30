@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeskHubSharp.Models
+namespace DeskHubSharp
 {
     public class Owner
     {
