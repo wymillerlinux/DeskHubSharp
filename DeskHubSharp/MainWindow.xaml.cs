@@ -70,8 +70,7 @@ namespace DeskHubSharp
             //var stuff = info.GetRepoInfoDataGrid();
             _repoDetail = RepoList.repoDetail;
             DataGrid.ItemsSource = _repoDetail;
-
-            txtblk_username.Text = RepoList.repoDetail[0].owner.login;
+            txtblk_username.Text = RepoList.userDetail.login;
             txtblk_url.Text = RepoList.repoDetail[0].owner.html_url;
             txtblk_bio.Text = RepoList.userDetail.bio;
             txtblk_email.Text = RepoList.userDetail.blog;

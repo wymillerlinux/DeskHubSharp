@@ -39,23 +39,38 @@ namespace DeskHubSharp
         /// <returns></returns>
         public void SearchRequest()
         {
-            var client = new RestClient(_apiEndpoint);
-            RestRequest requestRepo = new RestRequest($"users/{_query}/repos", Method.GET);
+            try
+            {
+                var client = new RestClient(_apiEndpoint);
+                RestRequest requestRepo = new RestRequest($"users/{_query}/repos", Method.GET);
 
-            var response = client.Execute(requestRepo);
-            var x = response.Content;
-            var deserialized = JsonConvert.DeserializeObject<ObservableCollection<RepoDetail>>(x);
+                var response = client.Execute(requestRepo);
+                var x = response.Content;
+                var deserialized = JsonConvert.DeserializeObject<ObservableCollection<RepoDetail>>(x);
 
-            //ObservableCollection<RepoDetail> test = new ObservableCollection<RepoDetail>()
-            //{
-            //    new RepoDetail()
-            //    {
-            //        Login = "John",
-            //        Password = "pw"
-            //    }
-            //};
+                //ObservableCollection<RepoDetail> test = new ObservableCollection<RepoDetail>()
+                //{
+                //    new RepoDetail()
+                //    {
+                //        Login = "John",
+                //        Password = "pw"
+                //    }
+                //};
 
-            RepoList.repoDetail = deserialized;
+                if (deserialized.Count() == 0)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    RepoList.repoDetail = deserialized;
+                }
+            }
+            catch (Exception)
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.txtblk_error.Text = "We can't gather repository data. Please try again";
+            }
         }
 
 
@@ -64,15 +79,32 @@ namespace DeskHubSharp
         /// </summary>
         public void UserRequest()
         {
-            var client = new RestClient(_apiEndpoint);
+            try
+            {
+                var client = new RestClient(_apiEndpoint);
 
-            RestRequest requestUser = new RestRequest($"users/{_query}", Method.GET);
+                RestRequest requestUser = new RestRequest($"users/{_query}", Method.GET);
 
-            var response = client.Execute(requestUser);
-            string x = response.Content;
-            var deserailized = JsonConvert.DeserializeObject<User>(x);
+                var response = client.Execute(requestUser);
+                string x = response.Content;
+                var deserailized = JsonConvert.DeserializeObject<User>(x);
 
-            RepoList.userDetail = deserailized;
+                if (deserailized == null)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    RepoList.userDetail = deserailized;
+                }
+
+            }
+            catch (Exception)
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.txtblk_error.Text = "We can't gather user data. Please try again.";
+            }
+
         }
 
     }
