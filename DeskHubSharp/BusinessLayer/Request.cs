@@ -69,7 +69,7 @@ namespace DeskHubSharp
             catch (Exception)
             {
                 ErrorWindow err = new ErrorWindow();
-                err.txtblk_error.Text = "We can't gather repository data. Please try again";
+                err.txtblk_error.Text = "We couldn't gather repository data. Please try again";
             }
         }
 
@@ -102,7 +102,7 @@ namespace DeskHubSharp
             catch (Exception)
             {
                 ErrorWindow err = new ErrorWindow();
-                err.txtblk_error.Text = "We can't gather user data. Please try again.";
+                err.txtblk_error.Text = "We couldn't gather user data. Please try again.";
             }
 
         }

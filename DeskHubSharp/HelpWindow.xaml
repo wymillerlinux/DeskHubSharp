@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
         Title="Help - DeskHubSharp" Height="450" Width="400
-">
+" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="307,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFBDBD" Click="btn_close_Click"/>
         <Label x:Name="lbl_title" Content="Need some help?" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" FontSize="20"/>

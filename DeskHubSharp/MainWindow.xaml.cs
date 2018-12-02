@@ -31,7 +31,7 @@ namespace DeskHubSharp
 
         private void btn_detail_Click(object sender, RoutedEventArgs e)
         {
-            RepoDetail repo = _repoDetail[DataGrid.SelectedIndex];
+            RepoDetail repo = _repoDetail[ListBox.SelectedIndex];
             DetailWindow detail = new DetailWindow(repo);
             detail.ShowDialog();
         }
@@ -62,19 +62,18 @@ namespace DeskHubSharp
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
             SearchWindow search = new SearchWindow();
-            RepoDetail detail = new RepoDetail();
-            //RepoInfo info = new RepoInfo();
+            RepoInfo info = new RepoInfo();
             Owner owner = new Owner();
-            User user = new User();
             search.ShowDialog();
-            //var stuff = info.GetRepoInfoDataGrid();
+            var stuff = info.GetRepoInfoDataGrid();
             _repoDetail = RepoList.repoDetail;
-            DataGrid.ItemsSource = _repoDetail;
+            ListBox.ItemsSource = stuff;
             txtblk_username.Text = RepoList.userDetail.login;
-            txtblk_url.Text = RepoList.repoDetail[0].owner.html_url;
+            txtblk_url.Text = RepoList.userDetail.html_url;
             txtblk_bio.Text = RepoList.userDetail.bio;
             txtblk_email.Text = RepoList.userDetail.blog;
             txtblk_realname.Text = RepoList.userDetail.name;
+            txtblk_repocount.Text = $"{RepoList.userDetail.login} has {RepoList.userDetail.public_repos} public repositories.";
             //img_avatar.Source = RepoList.repoDetail[0].owner.avatar_url;
         }
 

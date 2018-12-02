@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="Feedback - DeskHubSharp" Height="450" Width="500">
+        Title="Feedback - DeskHubSharp" Height="450" Width="500" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="lbl_title" Content="Feedback" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="23" Margin="43,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>

@@ -14,14 +14,11 @@ namespace DeskHubSharp
 
         }
 
-        public ObservableCollection<string> GetRepoInfoDataGrid()
+        public List<string> GetRepoInfoDataGrid()
         {
-            ObservableCollection<string> repoStuff = new ObservableCollection<string>();
-            RepoDetail repo = new RepoDetail();
-            repoStuff.Add(Convert.ToString(RepoList.repoDetail.Select(x => x.name)));
-            //repoStuff.Add(repo.url);
-
-            return repoStuff;
+            List<string> stuff = RepoList.repoDetail.Select(x => x.full_name).ToList();
+            //stuff =+ RepoList.repoDetail.Select(x => x.name).ToList();
+            return stuff;
         }
 
     }
