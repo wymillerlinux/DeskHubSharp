@@ -73,6 +73,9 @@
     </ApplicationDefinition>
     <Compile Include="DAL\JsonDataService.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\License.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\RepoInfo.cs" />
     <Compile Include="SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
     </Compile>

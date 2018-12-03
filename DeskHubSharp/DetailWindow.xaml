@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="Detail - DeskHubSharp" Height="450" Width="800">
+        Title="Detail - DeskHubSharp" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="lbl_reponame" Content="Repository Name" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.603,-0.2" Width="225" FontSize="16"/>
         <Label x:Name="lbl_title" Content="Details" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="171" FontSize="20"/>
         <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFABAB" Click="btn_close_Click"/>
+        <Button x:Name="btn_clone" Content="Clone" HorizontalAlignment="Left" Margin="240,54,0,0" VerticalAlignment="Top" Width="75" />
 
     </Grid>
 </Window>
