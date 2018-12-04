@@ -56,7 +56,7 @@ namespace DeskHubSharp
                 //    }
                 //};
 
-                if (deserialized.Count() == 0)
+                if (deserialized.Count == 0)
                 {
                     throw new Exception();
                 }
@@ -98,7 +98,7 @@ namespace DeskHubSharp
                 }
 
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
                 ErrorWindow err = new ErrorWindow();
                 err.txtblk_error.Text = "We couldn't gather user data. Please try again.";
@@ -123,7 +123,7 @@ namespace DeskHubSharp
 
                 RequestList.branchDetail = deserailized;
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
                 ErrorWindow err = new ErrorWindow();
                 err.txtblk_error.Text = "We couldn't gather user data. Please try again.";

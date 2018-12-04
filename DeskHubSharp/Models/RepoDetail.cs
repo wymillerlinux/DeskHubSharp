@@ -2,6 +2,8 @@ using DeskHubSharp;
 
 namespace DeskHubSharp
 {
+
+    // TODO: The RepoDetail class is called from the code behind, fix it
     public class RepoDetail
     {
         public Owner Owner { get; set; }

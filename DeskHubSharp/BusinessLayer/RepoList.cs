@@ -9,21 +9,37 @@ namespace DeskHubSharp
 {
     class RepoInfo
     {
-        // TODO: Rename this to something more generic
-
         public RepoInfo()
         {
 
         }
 
-        public List<string> GetRepoInfoDataGrid()
+        /// <summary>
+        /// Return a list for the list box
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetRepoInfoList()
         {
-            List<string> stuff = RequestList.repoDetail.Select(x => x.full_name).ToList();
-            //stuff =+ RepoList.repoDetail.Select(x => x.name).ToList();
+            List<string> stuff = new List<string>();
+
+            try
+            {
+                stuff = RequestList.repoDetail.Select(x => x.full_name).ToList();
+            }
+            catch (Exception)
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.txtblk_error.Text = "We couldn't gather any data. Does the user exist?";
+                err.ShowDialog();
+            }
+
             return stuff;
         }
 
-        // validation
+        /// <summary>
+        /// Return a list for the combo box
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetBranchNameComboBox()
         {
             List<string> stuff = RequestList.branchDetail.Select(x => x.name).ToList();

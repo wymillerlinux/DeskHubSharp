@@ -31,12 +31,20 @@ namespace DeskHubSharp
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
-            Request request = new Request(txtbox_query.Text);
-            request.SearchRequest();
-            request.UserRequest();
-            //MainWindow main = new MainWindow();
-            //main.ShowDialog();
-            this.Close();
+            if (txtbox_query.Text == "")
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.txtblk_error.Text = "Please enter a username!";
+                err.ShowDialog();
+            }
+            else
+            {
+                Request request = new Request(txtbox_query.Text);
+                request.SearchRequest();
+                request.UserRequest();
+                this.Close();
+            }
+
         }
     }
 }
