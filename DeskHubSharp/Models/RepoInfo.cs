@@ -9,6 +9,8 @@ namespace DeskHubSharp
 {
     class RepoInfo
     {
+        // TODO: Rename this to something more generic
+
         public RepoInfo()
         {
 
@@ -16,10 +18,16 @@ namespace DeskHubSharp
 
         public List<string> GetRepoInfoDataGrid()
         {
-            List<string> stuff = RepoList.repoDetail.Select(x => x.full_name).ToList();
+            List<string> stuff = RequestList.repoDetail.Select(x => x.full_name).ToList();
             //stuff =+ RepoList.repoDetail.Select(x => x.name).ToList();
             return stuff;
         }
 
+        // validation
+        public List<string> GetBranchNameComboBox()
+        {
+            List<string> stuff = RequestList.branchDetail.Select(x => x.name).ToList();
+            return stuff;
+        }
     }
 }

@@ -66,14 +66,14 @@ namespace DeskHubSharp
             Owner owner = new Owner();
             search.ShowDialog();
             var stuff = info.GetRepoInfoDataGrid();
-            _repoDetail = RepoList.repoDetail;
+            _repoDetail = RequestList.repoDetail;
             ListBox.ItemsSource = stuff;
-            txtblk_username.Text = RepoList.userDetail.login;
-            txtblk_url.Text = RepoList.userDetail.html_url;
-            txtblk_bio.Text = RepoList.userDetail.bio;
-            txtblk_email.Text = RepoList.userDetail.blog;
-            txtblk_realname.Text = RepoList.userDetail.name;
-            txtblk_repocount.Text = $"{RepoList.userDetail.login} has {RepoList.userDetail.public_repos} public repositories.";
+            txtblk_username.Text = RequestList.userDetail.login;
+            txtblk_url.Text = RequestList.userDetail.html_url;
+            txtblk_bio.Text = RequestList.userDetail.bio;
+            txtblk_email.Text = RequestList.userDetail.blog;
+            txtblk_realname.Text = RequestList.userDetail.name;
+            txtblk_repocount.Text = $"{RequestList.userDetail.login} has {RequestList.userDetail.public_repos} public repositories.";
             //img_avatar.Source = RepoList.repoDetail[0].owner.avatar_url;
         }
 

@@ -25,14 +25,34 @@ namespace DeskHubSharp
         public DetailWindow(RepoDetail repoDetail)
         {
             InitializeComponent();
-            _repoDetail = repoDetail;
-            lbl_reponame.Content = _repoDetail.full_name;
 
+            _repoDetail = repoDetail;
+
+            Request request = new Request(_repoDetail.name);
+            RepoInfo info = new RepoInfo();
+            request.BranchRequest();
+            var stuff = info.GetBranchNameComboBox();
+
+            cmbbox_branches.ItemsSource = stuff;
+
+            lbl_reponame.Content = _repoDetail.full_name;
+            txtblk_language.Text = $"This repo is mostly {_repoDetail.language} code.";
+            txtblk_stargazers.Text = $"This repo has {_repoDetail.stargazers_count} stargazers.";
         }
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+
+        }
+
+        private void Hyperlink_RequestNavigate_1(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+
         }
     }
 }

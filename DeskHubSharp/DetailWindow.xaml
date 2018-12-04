@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskHubSharp"
         mc:Ignorable="d"
-        Title="Detail - DeskHubSharp" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Detail - DeskHubSharp" Height="450" Width="400" ResizeMode="NoResize">
     <Grid>
-        <Label x:Name="lbl_reponame" Content="Repository Name" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.603,-0.2" Width="225" FontSize="16"/>
-        <Label x:Name="lbl_title" Content="Details" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="171" FontSize="20"/>
-        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFABAB" Click="btn_close_Click"/>
-        <Button x:Name="btn_clone" Content="Clone" HorizontalAlignment="Left" Margin="240,54,0,0" VerticalAlignment="Top" Width="75" />
-
+        <Label x:Name="lbl_reponame" Content="Repository Name" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.603,-0.2" Width="374" FontSize="20"/>
+        <Label x:Name="lbl_title" Content="Details" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81" FontSize="24"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="309,389,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFABAB" Click="btn_close_Click"/>
+        <TextBlock x:Name="txtblk_clonelnk" Margin="147,377,195,12" FontSize="20" RenderTransformOrigin="0.238,1.236">
+            <Hyperlink NavigateUri="{Binding}" RequestNavigate="Hyperlink_RequestNavigate">
+                Clone                
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="204,386,118,17">
+            <Hyperlink NavigateUri="{Binding}" RequestNavigate="Hyperlink_RequestNavigate_1">
+                GitHub Page
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="txtblk_language" HorizontalAlignment="Left" Margin="13,99,0,0" TextWrapping="Wrap" Text="This repo is mostly crappy code!" VerticalAlignment="Top" Height="25" Width="223" FontSize="14"/>
+        <TextBlock x:Name="txtblk_stargazers" HorizontalAlignment="Left" Margin="13,129,0,0" TextWrapping="Wrap" Text="This repo has 0 stargazers!" VerticalAlignment="Top" Height="24" Width="186" FontSize="14"/>
+        <ComboBox x:Name="cmbbox_branches" HorizontalAlignment="Left" Margin="13,377,0,0" VerticalAlignment="Top" Width="120" Height="32"/>
+        <Label x:Name="lbl_branch" Content="What branch do you want to download?" HorizontalAlignment="Left" Margin="13,346,0,0" VerticalAlignment="Top" Width="223"/>
     </Grid>
 </Window>
