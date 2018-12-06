@@ -71,6 +71,7 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BusinessLayer\Request.cs" />
     <Compile Include="DAL\JsonDataService.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Email.cs" />
@@ -107,9 +108,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BusinessLayer\EmailBLL.cs" />
-    <Compile Include="BusinessLayer\Request.cs" />
+    <Compile Include="DAL\ApiDataService.cs" />
     <Compile Include="DAL\IDataService.cs" />
-    <Compile Include="DAL\XmlDataService.cs" />
     <Compile Include="Data\DataConfig.cs" />
     <Compile Include="DetailWindow.xaml.cs">
       <DependentUpon>DetailWindow.xaml</DependentUpon>

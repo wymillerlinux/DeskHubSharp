@@ -19,6 +19,9 @@ namespace DeskHubSharp
     /// </summary>
     public partial class SearchWindow : Window
     {
+
+        private Request _request;
+
         public SearchWindow()
         {
             InitializeComponent();
@@ -39,9 +42,9 @@ namespace DeskHubSharp
             }
             else
             {
-                Request request = new Request(txtbox_query.Text);
-                request.SearchRequest();
-                request.UserRequest();
+                _request = new Request(txtbox_query.Text);
+                _request.PerformSearchRequest();
+                _request.PerformUserRequest();
                 this.Close();
             }
 

@@ -23,6 +23,8 @@ namespace DeskHubSharp
     {
         private ObservableCollection<RepoDetail> _repoDetail;
         private User _userDetail;
+        private Request _request;
+        private RepoInfo _repoInfo;
 
         public MainWindow()
         {
@@ -41,15 +43,15 @@ namespace DeskHubSharp
             }
             catch (IndexOutOfRangeException)
             {
-                ErrorWindow err = new ErrorWindow();
-                err.txtblk_error.Text = "Please pick a repository!";
-                err.ShowDialog();
+                ShowErrorMessage("Please pick a repository!");
             }
             catch (NullReferenceException)
             {
-                ErrorWindow err = new ErrorWindow();
-                err.txtblk_error.Text = "Please search for a user with the Search button!";
-                err.ShowDialog();
+                ShowErrorMessage("Please search for a user with the Search button!");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                ShowErrorMessage("MEME REVIEW!");
             }
 
         }
@@ -82,7 +84,6 @@ namespace DeskHubSharp
             SearchWindow search = new SearchWindow();
             search.ShowDialog();
             RepoInfo info = new RepoInfo();
-            Owner owner = new Owner();
 
             var stuff = info.GetRepoInfoList();
 
@@ -105,6 +106,13 @@ namespace DeskHubSharp
                 txtblk_realname.Text = _userDetail.name;
                 txtblk_repocount.Text = $"{_userDetail.login} has {_userDetail.public_repos} public repositories.";
             }
+        }
+
+        public void ShowErrorMessage(string message)
+        {
+            ErrorWindow err = new ErrorWindow();
+            err.txtblk_error.Text = message;
+            err.ShowDialog();
         }
     }
 }
