@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DeskHubSharp
 {
-    // TODO: The Owner class is called by code behind, fix it
-
+    /// <summary>
+    /// Class from a JSON to a C# converter
+    /// </summary>
     public class Owner
     {
         /// <summary>

@@ -24,6 +24,9 @@ namespace DeskHubSharp
             set { _toEmail = value; }
         }
 
+        /// <summary>
+        /// Constructor for the Email class
+        /// </summary>
         public Email()
         {
 

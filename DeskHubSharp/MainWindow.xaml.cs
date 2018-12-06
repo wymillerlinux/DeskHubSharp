@@ -25,7 +25,6 @@ namespace DeskHubSharp
         private User _userDetail;
         private Request _request;
         private RepoInfo _repoInfo;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -59,6 +58,7 @@ namespace DeskHubSharp
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
         }
 
         private void btn_about_Click(object sender, RoutedEventArgs e)
@@ -113,6 +113,11 @@ namespace DeskHubSharp
             ErrorWindow err = new ErrorWindow();
             err.txtblk_error.Text = message;
             err.ShowDialog();
+        }
+
+        private void btn_sort_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

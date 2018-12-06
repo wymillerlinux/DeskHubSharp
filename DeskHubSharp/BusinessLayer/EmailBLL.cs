@@ -13,9 +13,6 @@ namespace DeskHubSharp
 {
     class EmailBLL
     {
-        // TODO: finish this class
-        // TODO: debug feedback form
-
         private string _name;
         private string _message;
         private string _emailText;

@@ -78,6 +78,7 @@
     <Compile Include="Models\License.cs" />
     <Compile Include="Models\Owner.cs" />
     <Compile Include="BusinessLayer\RepoList.cs" />
+    <Compile Include="Models\Sort.cs" />
     <Compile Include="SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
     </Compile>
