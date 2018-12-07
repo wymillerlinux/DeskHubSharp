@@ -28,7 +28,7 @@
         <TextBlock x:Name="txtblk_repocount" HorizontalAlignment="Left" Margin="10,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="235" RenderTransformOrigin="0.496,0.482"/>
         <ComboBox x:Name="cmbbox_sort" HorizontalAlignment="Left" Margin="330,280,0,0" VerticalAlignment="Top" Width="199"/>
         <Button x:Name="btn_sort" Content="Sort" HorizontalAlignment="Left" Margin="250,280,0,0" VerticalAlignment="Top" Width="75" Click="btn_sort_Click" Height="22"/>
-        <Button x:Name="btn_searchrepo" Content="Search Repository" HorizontalAlignment="Left" Margin="250,307,0,0" VerticalAlignment="Top" Width="109"/>
+        <Button x:Name="btn_searchrepo" Content="Search Repository" HorizontalAlignment="Left" Margin="250,307,0,0" VerticalAlignment="Top" Width="109" Click="btn_searchrepo_Click"/>
         <TextBox x:Name="txtbox_searchbox" HorizontalAlignment="Left" Height="20" Margin="364,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.131,-0.913"/>
 
     </Grid>

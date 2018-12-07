@@ -12,13 +12,21 @@ namespace DeskHubSharp
         private string _query;
 
         /// <summary>
-        /// Constructor for the class
+        /// Override constructor for the class
         /// </summary>
         /// <param name="query"></param>
         public Request(string query)
         {
             _query = query;
             _api = new ApiDataService(_query);
+        }
+
+        /// <summary>
+        /// Constructor for the class
+        /// </summary>
+        public Request()
+        {
+
         }
 
         /// <summary>
@@ -53,6 +61,13 @@ namespace DeskHubSharp
         {
             Owner owner = new Owner();
             return owner;
+        }
+
+        public List<string> PerformGetSort()
+        {
+            Sort sort = new Sort();
+            var sortTerms = sort.GetSortTerms();
+            return sortTerms;
         }
 
     }

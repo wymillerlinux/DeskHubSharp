@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace DeskHubSharp
 {
-    public static class Sort
+    public class Sort
     {
-        public enum SortBox
+        public Sort()
         {
-            Alphabettically,
-            MostStars,
-            MostForks,
-            MostWatchers
+            
+        }
+
+        public List<string> GetSortTerms()
+        {
+            List<string> sortTerms = new List<string>();
+            sortTerms.Add("A - Z");
+            sortTerms.Add("Least to most Stars");
+            sortTerms.Add("Least to most Forks");
+            sortTerms.Add("Least to most Watchers");
+
+            return sortTerms;
         }
     }
 }

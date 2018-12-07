@@ -25,17 +25,18 @@ namespace DeskHubSharp
         private User _userDetail;
         private Request _request;
         private RepoInfo _repoInfo;
+
         public MainWindow()
         {
             InitializeComponent();
-            //ShowDataGridItems();
+            _request = new Request();
+            cmbbox_sort.ItemsSource = _request.PerformGetSort();
         }
 
         private void btn_detail_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _repoDetail = RequestList.repoDetail;
                 RepoDetail repo = _repoDetail[ListBox.SelectedIndex];
                 DetailWindow detail = new DetailWindow(repo);
                 detail.Show();
@@ -84,7 +85,8 @@ namespace DeskHubSharp
             SearchWindow search = new SearchWindow();
             search.ShowDialog();
             RepoInfo info = new RepoInfo();
-
+            _repoDetail = RequestList.repoDetail;
+        
             var stuff = info.GetRepoInfoList();
 
             if (stuff.Count == 0)
@@ -117,6 +119,54 @@ namespace DeskHubSharp
 
         private void btn_sort_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string sortTerm = cmbbox_sort.Text;
+
+                if (sortTerm == "A - Z")
+                {
+                    var sortedList = _repoDetail.OrderBy(x => x.full_name).ToList();
+                    ListBox.ItemsSource = sortedList.Select(x => x.full_name);
+                }
+                if (sortTerm == "Least to most Stars")
+                {
+                    // TODO: There's a bug in here
+                    var sortedList = _repoDetail.OrderBy(c => c.stargazers_count).ToList();
+                    ListBox.ItemsSource = sortedList.Select(x => x.full_name);
+                }
+                if (sortTerm == "Least to most Forks")
+                {
+                    var sortedList = _repoDetail.OrderBy(c => c.forks_count).ToList();
+                    ListBox.ItemsSource = sortedList.Select(x => x.full_name);
+                }
+                if (sortTerm == "Least to most Watchers")
+                {
+                    var sortedList = _repoDetail.OrderBy(c => c.watchers_count).ToList();
+                    ListBox.ItemsSource = sortedList.Select(x => x.full_name);
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                ShowErrorMessage("A user has not been searched. Please try again.");
+            }
+
+
+
+        }
+
+        private void btn_searchrepo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string searchTerm = txtbox_searchbox.Text;
+                var searchedList = _repoDetail.Where(c => c.full_name.ToUpper().Contains(searchTerm.ToUpper())).ToList();
+
+                ListBox.ItemsSource = searchedList.Select(x => x.full_name);
+            }
+            catch (ArgumentNullException)
+            {
+                ShowErrorMessage("A user has not been searched. Please try again.");
+            }
 
         }
     }
