@@ -4,7 +4,7 @@ namespace DeskHubSharp
     {
         private string _toEmail = "wjmiller2016@gmail.com";
         private string _fromEmail = "wjmiller2016@gmail.com";
-        private string _passwordEmail = "password";
+        private string _passwordEmail = "IhaveanAMDRX480";
 
         public string Password
         {

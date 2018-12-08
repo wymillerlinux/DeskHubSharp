@@ -42,6 +42,14 @@ namespace DeskHubSharp
                 err.ShowDialog();
                 return false;
             }
+            if (_emailText == "")
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.lbl_title.Content = "Oops.";
+                err.txtblk_error.Text = "Please fill in your email.";
+                err.ShowDialog();
+                return false;
+            }
 
             return true;
         }
@@ -61,7 +69,7 @@ namespace DeskHubSharp
                     message.Subject = $"{_name} requires your attention!";
                     message.Body = new TextPart("plain")
                     {
-                        Text = _message + _emailText
+                        Text = _message + " " + _emailText
                     };
 
                     using (var client = new SmtpClient())
