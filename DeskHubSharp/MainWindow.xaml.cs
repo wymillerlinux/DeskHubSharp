@@ -50,7 +50,7 @@ namespace DeskHubSharp
             }
             catch (ArgumentOutOfRangeException)
             {
-                ShowErrorMessage("MEME REVIEW!");
+                ShowErrorMessage("Please search for a user with the Search button!");
             }
 
         }

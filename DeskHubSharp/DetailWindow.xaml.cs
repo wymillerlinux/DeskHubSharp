@@ -51,8 +51,6 @@ namespace DeskHubSharp
             txtblk_stargazers.Text = $"This repo has {_repoDetail.stargazers_count} stargazers.";
             txtblk_watchers.Text = $"This repo has {_repoDetail.watchers_count} watchers.";
             txtblk_forks.Text = $"This repo has {_repoDetail.forks_count} forks.";
-
-
         }
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
@@ -66,6 +64,7 @@ namespace DeskHubSharp
             {
                 ErrorWindow err = new ErrorWindow();
                 err.txtblk_error.Text = "Please select a branch to clone.";
+                err.ShowDialog();
             }
             else
             {
