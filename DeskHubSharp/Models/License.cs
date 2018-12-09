@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DeskHubSharp
 {
+    /// <summary>
+    /// Class from a JSON to a C# converter
+    /// </summary>
     public class License
     {
         /// <summary>

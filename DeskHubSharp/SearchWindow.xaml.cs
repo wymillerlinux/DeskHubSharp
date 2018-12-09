@@ -19,6 +19,9 @@ namespace DeskHubSharp
     /// </summary>
     public partial class SearchWindow : Window
     {
+
+        private Request _request;
+
         public SearchWindow()
         {
             InitializeComponent();
@@ -31,12 +34,20 @@ namespace DeskHubSharp
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
-            Request request = new Request(txtbox_query.Text);
-            request.SearchRequest();
-            request.UserRequest();
-            //MainWindow main = new MainWindow();
-            //main.ShowDialog();
-            this.Close();
+            if (txtbox_query.Text == "")
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.txtblk_error.Text = "Please enter a username!";
+                err.ShowDialog();
+            }
+            else
+            {
+                _request = new Request(txtbox_query.Text);
+                _request.PerformSearchRequest();
+                _request.PerformUserRequest();
+                this.Close();
+            }
+
         }
     }
 }

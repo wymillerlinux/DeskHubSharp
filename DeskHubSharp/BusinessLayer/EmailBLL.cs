@@ -13,9 +13,6 @@ namespace DeskHubSharp
 {
     class EmailBLL
     {
-        // TODO: finish this class
-        // TODO: debug feedback form
-
         private string _name;
         private string _message;
         private string _emailText;
@@ -27,6 +24,10 @@ namespace DeskHubSharp
             _emailText = emailText;
         }
 
+        /// <summary>
+        /// Checks to see if Email is valid to send
+        /// </summary>
+        /// <returns></returns>
         private bool IsValidated()
         { 
             if (_name == "")
@@ -45,10 +46,21 @@ namespace DeskHubSharp
                 err.ShowDialog();
                 return false;
             }
+            if (_emailText == "")
+            {
+                ErrorWindow err = new ErrorWindow();
+                err.lbl_title.Content = "Oops.";
+                err.txtblk_error.Text = "Please fill in your email.";
+                err.ShowDialog();
+                return false;
+            }
 
             return true;
         }
 
+        /// <summary>
+        /// Creates message for user to send
+        /// </summary>
         public void CreateMessage()
         {
             if (IsValidated())
@@ -64,13 +76,12 @@ namespace DeskHubSharp
                     message.Subject = $"{_name} requires your attention!";
                     message.Body = new TextPart("plain")
                     {
-                        Text = _message + _emailText
+                        Text = _message + " " + _emailText
                     };
 
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
-                        // change credentials
                         client.Authenticate(email.FromEmail, email.Password);
                         client.Send(message);
                         client.Disconnect(true);

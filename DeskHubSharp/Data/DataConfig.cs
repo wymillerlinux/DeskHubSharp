@@ -8,6 +8,6 @@ namespace DeskHubSharp
 {
     class DataConfig
     {
-        public string dataConfString = "";
+        public static string dataConfString = "https://api.github.com/";
     }
 }

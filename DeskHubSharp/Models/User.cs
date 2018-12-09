@@ -2,6 +2,8 @@ using System.Collections.Generic;
 
 namespace DeskHubSharp
 {
+
+    // The User class is called from the code behind, fix it
     public class User
     {
         public string login { get; set; }
