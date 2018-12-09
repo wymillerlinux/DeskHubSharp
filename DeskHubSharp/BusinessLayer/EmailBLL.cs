@@ -24,6 +24,10 @@ namespace DeskHubSharp
             _emailText = emailText;
         }
 
+        /// <summary>
+        /// Checks to see if Email is valid to send
+        /// </summary>
+        /// <returns></returns>
         private bool IsValidated()
         { 
             if (_name == "")
@@ -54,6 +58,9 @@ namespace DeskHubSharp
             return true;
         }
 
+        /// <summary>
+        /// Creates message for user to send
+        /// </summary>
         public void CreateMessage()
         {
             if (IsValidated())
@@ -75,7 +82,6 @@ namespace DeskHubSharp
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
-                        // change credentials
                         client.Authenticate(email.FromEmail, email.Password);
                         client.Send(message);
                         client.Disconnect(true);

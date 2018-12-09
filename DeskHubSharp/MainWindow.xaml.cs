@@ -24,7 +24,6 @@ namespace DeskHubSharp
         private ObservableCollection<RepoDetail> _repoDetail;
         private User _userDetail;
         private Request _request;
-        private RepoInfo _repoInfo;
 
         public MainWindow()
         {
@@ -130,9 +129,9 @@ namespace DeskHubSharp
                 }
                 if (sortTerm == "Least to most Stars")
                 {
-                    // TODO: There's a bug in here
                     var sortedList = _repoDetail.OrderBy(c => c.stargazers_count).ToList();
                     ListBox.ItemsSource = sortedList.Select(x => x.full_name);
+                    
                 }
                 if (sortTerm == "Least to most Forks")
                 {
@@ -149,9 +148,6 @@ namespace DeskHubSharp
             {
                 ShowErrorMessage("A user has not been searched. Please try again.");
             }
-
-
-
         }
 
         private void btn_searchrepo_Click(object sender, RoutedEventArgs e)

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace DeskHubSharp
 {
-    // TODO: The RequestList class is called from code behind, fix it
     public class RequestList
     {
         /// <summary>
