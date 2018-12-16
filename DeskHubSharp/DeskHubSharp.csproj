@@ -165,9 +165,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="colors.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeskHubSharp.Models\DeskHubSharp.Models.fsproj">
+      <Project>{8bda59ae-1de9-4049-8929-0eaa58f28e68}</Project>
+      <Name>DeskHubSharp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,7 @@ using MailKit;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using DeskHubSharp.Models;
 
 namespace DeskHubSharp
 {
