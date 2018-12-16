@@ -6,7 +6,7 @@ Please note this application only works on Windows. Mono and Wine, I did not tes
 will include platform-agnostic capablities, so it is being worked on.
 
 Things you can do with application is search GitHub users, look at repositories from a 10k foot view, go into to detail
-with a certain repository and clone a branch of that repository.
+with a certain repository and clone a branch of that repository. Does not include git features. Will add that in the future.
 
 ## Installation
 
