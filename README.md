@@ -25,4 +25,4 @@ I don't know, I have to figure this out later.
 
 ## Troubleshooting
 
-Found a bug? You want a new feature in the program? Use the feedback form in the application or (email)[mailto:wjmiller2016@gmail.com] me!
+Found a bug? You want a new feature in the program? Use the feedback form in the application or [email](mailto:wjmiller2016@gmail.com) me!
